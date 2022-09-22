@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   return (
     <div>
-      Hello
+      <h1>CSS React 적용</h1>
+      <p>CSS :D</p>
     </div>
   );
 }
