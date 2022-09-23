@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import LifecycleEx from './R004_LifecycleEx'
+import ForEach from './R014_ForEach'
 
 function App() {
   return (
     <div>
       <h1>Start React Conponent</h1>
       <p>CSS :D</p>
-      <LifecycleEx></LifecycleEx>
+      <ForEach/>
     </div>
   );
 }
