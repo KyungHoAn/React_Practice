@@ -131,3 +131,16 @@ R020_PropsObjVal.propTypes = {
 [state 사용]
 - props를 상위 컴포넌트에서 하위 컴포넌트로 데이터를 전달할 때 사용했다면 state는 하나의 컴포넌트 안에서 전역 변수처럼 사용
 
+[setState() 함수]
+- this.state.변수명 = value 와 같이 state를 직접 변경하면 render() 함수를 호출하지 않으므로 화면에 보이는 state 값은 바뀌기 전 상태로 남게됨
+- setState() 하수로 state를 변경해야 render() 함수를 호출해 변경되 값을 화면에 뿌릴 수 있음
+
+[forceUpdate() 함수]
+- forceUpdate() 함수는 화면을 강제로 새로 고침하기 때문에 render() 함수를 다시 실행시켜 화면에 변경된 state 값을 표시할 수 있다.
+
+[Component 사용(Class형 컴포넌트)]
+- class형 컴포넌트에는 Component 화 PureComponent가 있다.
+- 두 컴포넌트 모두 props 와 state의 변경에 따라 render() 함수 호출
+- Componet에서는 비교 대상이 완저히 동일하지 않으면 변경이 발생했다고 본다.
+- PureComponent 에서는 비교 대상의 값을 비교해 동일하지 않으면 변경이 발생했다고 본다. 불필요한 render함수실행을 줄이면 페이지 성능을 향상시킬 수 있다.
+
