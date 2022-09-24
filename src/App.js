@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Map from "./R015_Map";
+import PureComponentClass from "./R028_PureComponentClass";
 
 function App() {
   return (
     <div>
       <h1>Start React Conponent</h1>
       <p>CSS :D</p>
-      <Map />
+      <PureComponentClass />
     </div>
   );
 }
