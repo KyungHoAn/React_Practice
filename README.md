@@ -86,3 +86,48 @@ ForEach_Arr.forEach((result) => {
 })
 console.log("2. ForEach_newArr : ["+ForEach_newArr+"]");
 ```
+[jQuery]
+- npm install jquery
+```
+import $ from 'jquery';
+```
+
+[props]
+- props는 부모 컴포넌트가 자식 컴포넌트에 데이터를 전달할 때 사용
+- props를 전달받은 자식 컴포넌트에서는 데이터를 수정할 수 없다.
+[props 자료형 선언]
+- props 값들 각각에 적합한 자료형을 선언
+```
+문자열 유형인 props.String 변수의 자료형을 number로 선언해 경고 메시지가 발생할 수 있도록 한다. 에러가 아닌 경고 메시지이기 때문에 화면에 String변수가 정상적 표시 확인가능
+R018_PropsDatatype.propTypes = {
+  String: datatype.number,
+  Number: datatype.number,
+  Boolean: datatype.bool,
+  Array: datatype.array,
+  ObjectJson: datatype.object,
+  Function: datatype.func,
+};
+```
+
+[props 객체형 사용]
+- props 값을 객체로 하위 컴포넌트에 전달 경우, 자료형을  object로 선언, but 객체 형태의 자료형 선언시 shape 유형 사용
+
+```
+R020_PropsObjVal.propTypes = {
+  ObjectJson: datatype.shape({
+    react: datatype.string,
+    twohundred: datatype.number,
+  }),
+};
+```
+- App.js의 객체 형태
+```
+<PropsObjVal ObjectJson={{ react: "react", twohundred: "200" }} />  //해당 자료형 선언시 shape 활용
+```
+
+[props 필수값으로 사용]
+- props의 자료현을 선언할 때 prop-types를 사용, 자료형 설정 대신 isRequired를 조건으로 추가하면 변수값이 없는 경우 경고 메시지 발생
+
+[state 사용]
+- props를 상위 컴포넌트에서 하위 컴포넌트로 데이터를 전달할 때 사용했다면 state는 하나의 컴포넌트 안에서 전역 변수처럼 사용
+
