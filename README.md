@@ -144,3 +144,15 @@ R020_PropsObjVal.propTypes = {
 - Componet에서는 비교 대상이 완저히 동일하지 않으면 변경이 발생했다고 본다.
 - PureComponent 에서는 비교 대상의 값을 비교해 동일하지 않으면 변경이 발생했다고 본다. 불필요한 render함수실행을 줄이면 페이지 성능을 향상시킬 수 있다.
 
+[함수형 컴포넌트]
+- 함수형 컴포넌트는 return 값이 있는 function과 동일한 구조를 갖는다.
+
+[hook사용]
+- useState() 함수 : state 변숫값을 선언 및 할당, 이때 두 가지 인자가 선언된 배열이 반환 된다. 첫 번재 인자 contents는 state 변수명, 두 번째 인자 setContents는 state 변수값을 변경
+- useEffect() 함수는 생명주기 함수 componentDidMout()와 같이 return 되는 html 코드들이 화면에 그려진 이후에 실행
+
+[Fragment 사용]
+- 컴포넌트 단위로 element 를 return 할때마다 ,<html> 태크로 전체를 감싸지 않으면 에러 발생
+- <Fragment> 태그로 감싸면 불필요한 <html> 태그를 추가하지 않고 사용 가능
+
+  
