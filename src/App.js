@@ -8,7 +8,7 @@ function App() {
     <div>
       <h1>Start React Conponent</h1>
       <p>CSS :D</p>
-      <Pagination/>
+      <Pagination/> 
     </div>
   );
 }
