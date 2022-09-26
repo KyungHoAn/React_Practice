@@ -197,3 +197,15 @@ toggle = (e) => {
 <Button color="success" onClick={this.toggle}>Fade In/Out</Button>
 ```
 
+[jumbotron]
+- Jumbotron은 대형 전광판을 의미, 넓은 영역에 눈에 띄게 정보를 표시해 사용자의 관심을 부름
+
+[reactstrap List Group 사용]
+- List Group 패키지는 정돈된 스타일의 목록을 표시할 때 사용
+- html에서 목록을 만드는 태그인 <ul> <li>로 반환함
+
+[Modal]
+```
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+```
+
