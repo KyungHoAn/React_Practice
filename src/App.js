@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import ReactstrapAlerts from "./R034_ReactstapAlerts";
+import InputGroup from "./R045_ReactstrapInputGroup";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <h1>Start React Conponent</h1>
       <p>CSS :D</p>
-      <ReactstrapAlerts />
+      <InputGroup/>
     </div>
   );
 }

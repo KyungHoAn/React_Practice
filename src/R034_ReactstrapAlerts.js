@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Alert, UncontrolledAlert } from "reactstrap";
 
-class R034_ReactstapAlerts extends Component {
+class R034_ReactstrapAlerts extends Component {
   render() {
     return (
       <div>
@@ -14,4 +14,4 @@ class R034_ReactstapAlerts extends Component {
   }
 }
 
-export default R034_ReactstapAlerts;
+export default R034_ReactstrapAlerts;
