@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import InputGroup from "./R045_ReactstrapInputGroup";
+import Pagination from "./R050_ReactstrapPagination";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <h1>Start React Conponent</h1>
       <p>CSS :D</p>
-      <InputGroup/>
+      <Pagination/>
     </div>
   );
 }
