@@ -155,4 +155,45 @@ R020_PropsObjVal.propTypes = {
 - 컴포넌트 단위로 element 를 return 할때마다 ,<html> 태크로 전체를 감싸지 않으면 에러 발생
 - <Fragment> 태그로 감싸면 불필요한 <html> 태그를 추가하지 않고 사용 가능
 
-  
+[reactstrap Breadcrumbs]
+- Breadcrumbs 패키지는 페이지 위치 경로를 지정한 웹 내비게이션에 사용된다.
+```
+<Breadcrumb tag="nav" listTag="div">
+  <BreadcrumbItem tag = "a" href = "#top">Go_top</BreadcrumbItem>
+  <BreadcrumbItem tag="a" href="#bottom">Go_buttom</BreadcrumbItem>
+</Breadcrumb>
+```
+
+[reactstrap Buttons]
+```
+<Button color="primary">blue</Button>
+<Button color="info">teal</Button>
+<Button color="success">green</Button>
+<Button color="warning">yellow</Button>
+<Button color="danger">red</Button>
+<Button color="dark">darg gray</Button>
+<Button color="secondary">gray</Button>
+<Button color="light">whilte</Button>
+```
+- Bottons 패키지는 <Button> 태그에 color 속성에 약속된 문자열을 넣으면, 용도에 맞는 버튼 스타일을 지원해준다.
+
+[carousel 슬라이드]
+- carousel 패키지는 슬라이드를 자동으로 회전시키는 기능 제공
+
+[Collapse]
+- Collapse 패키지는 특정 영역을 숨기는 기능을 제공한다. 버튼 이벤트로 펼치고 숨기는 기능 제어 가능
+- 상단부터 점차적으로 펼쳐지고 하단부터 숨겨진다는 것이 show(), hide() 함수와의 차이
+
+[Fade]
+- 특정 영역을 서서히 나타내고 숨기는 기능 제공
+- constructor 에서 state = fadeInOut 이 true면 선언 초깃값 true
+```
+toggle = (e) => {
+        this.setState({fadeInOut: !this.state.fadeInOut})
+    }
+    
+...
+//Button 클릭시 toggle 실행
+<Button color="success" onClick={this.toggle}>Fade In/Out</Button>
+```
+
