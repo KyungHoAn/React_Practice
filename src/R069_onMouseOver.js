@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class R070_ReactMouseOver extends Component {
+class R069_ReactMouseOver extends Component {
     MouseOver(tag) {
         console.log("TAG: "+tag)
     }
@@ -21,4 +21,4 @@ class R070_ReactMouseOver extends Component {
     }
 }
 
-export default R070_ReactMouseOver;
+export default R069_ReactMouseOver;
