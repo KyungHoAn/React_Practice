@@ -209,3 +209,19 @@ toggle = (e) => {
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 ```
 
+[fetch get 호출]
+- 자바스크립트 내장 함수인 fetch를 사용하면 쉽게 비동기 통신 구현 가능
+- React에서 비동기 처리를 할대 Promise를 사용하지만 Promise의 단점을 보완하기 위해 ES7에서 async와 await라는 키워드 추가
+  
+[axios get 사용]
+- axios도 fetch와 마찬가지로 비동기 통신을 지원
+- axios는 fetch와 달리 별도로 설치한 후 임포트 사용
+```
+ axios.get('http://date.jsontest.com/').then(response=>{alert(response.data.date)})
+```
+- url호출이 완료되면 then 함수가 실행, 이때 호출 결과로 response가 반환
+- response와 호출된 변수명 사이에 data를 붙이면 변수 사용 가능
+  
+[콜백함수]
+- 자바스크립트는 비동기적으로 동작하기 때문에 콜백 함수를 이용하여 특정 코드에 순서를 정해 원하는 시점에 실행 가능 하게 한다.
+  
