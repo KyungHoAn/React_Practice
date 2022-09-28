@@ -226,3 +226,6 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 [콜백함수]
 - 자바스크립트는 비동기적으로 동작하기 때문에 콜백 함수를 이용하여 특정 코드에 순서를 정해 원하는 시점에 실행 가능 하게 한다.
   
+
+[Hoc]
+- 
