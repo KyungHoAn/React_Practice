@@ -229,3 +229,8 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
 [Hoc]
 - 
+
+[Context api]
+- 컨텍스트를 사용하면 하위 컴포넌트가 여러 개인 구조에서 유용하게 사용 가능
+- 몇 번째 하위 컴포넌트인지와는 상관없이 필요한 하위 컴포넌트에서 소비자를 임포트해 필요한 데이터를 사용할 수 있다.
+
