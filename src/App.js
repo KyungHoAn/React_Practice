@@ -1,14 +1,16 @@
-import React from "react";
-import "./App.css";
-import ContextApi from "./Context/R077_ContextApi";
+import React, {Component} from "react";
+import StrAddButton from "./StrAddButton";
 
-function App() {
-  return (
-    <div>
-      <h1>Start React! :D</h1>
-      <ContextApi/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return(
+      <div>
+        <h1>start React 200!</h1>
+        <span>{this.props.store.getState().data.str}</span><br/>
+        <StrAddButton store={this.props.store}/>
+      </div>
+    );
+  }
 }
 
 export default App;
