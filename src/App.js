@@ -1,16 +1,13 @@
-import React, {Component} from "react";
-import StrAddButton from "./StrAddButton";
+import React from "react";
+import CookieRemove from "./R087_CookieRemove";
 
-class App extends Component {
-  render() {
-    return(
-      <div>
-        <h1>start React 200!</h1>
-        <span>{this.props.store.getState().data.str}</span><br/>
-        <StrAddButton store={this.props.store}/>
+function App() {
+  return(
+    <div>
+      <h1>Start react</h1>
+      <CookieRemove/>
       </div>
-    );
-  }
+  );
 }
 
 export default App;
