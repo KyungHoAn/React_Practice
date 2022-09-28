@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
 
-class R049_reactstrapNavbar extends Component {
+class R049_ReactstrapNavbar extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -35,4 +35,4 @@ class R049_reactstrapNavbar extends Component {
     }
 }
 
-export default R049_reactstrapNavbar;
+export default R049_ReactstrapNavbar;
