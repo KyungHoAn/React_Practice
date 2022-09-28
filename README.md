@@ -238,3 +238,15 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 - 컨텍스트는 부모 컴포넌트에서 생성한 데이터에 모든 자식 컴포넌트에서 접근 가능 하지만,
 - redux에서는 컴포넌틍 ㅚ부의 스토어라는 곳에서 관리하기 때문에 컴포넌트의 위치에 상관없이 스토어에 접근해
 - 데이터를 사용하고 변경할 수 있다.
+
+[cookie]
+- path는 쿠키 값을 저장하는 서버 경로
+- ex) path가 /react라면 localhost:3000/에서는 저장된 쿠키를 확인할 수 없고 localhost:3000/react에서만 확인 가능 path가 /라면 모든 페이지에서 쿠키 접근 가능
+
+[react-router-dom BrowserRouter 사용]
+- 라우팅 : 호출되는 url에 따라 페이지(view)이동 설정 
+- react에서 view는 component를 사용, react에서 라우팅을 지원하느 패키지는 여럿 있지만 웹 개발을 위한 패키지로 적합한 react-router-dom 설치
+- npm install --save react-router-dom
+- react-router-dom 패키지는 BrowserRouter, Route, Link의 기능 제공
+- Route는 호출되는 url에 따라 이동할 component를 정의
+- Link는 <a>태그와 같이 페이지에 표시되는 링크를 클릭하면 url을 호출
