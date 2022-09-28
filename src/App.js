@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import ReactHoc from "./Hoc/R075_ReactHoc";
+import ContextApi from "./Context/R077_ContextApi";
 
 function App() {
   return (
     <div>
-      <h1>Start React Conponent</h1>
-      <ReactHoc name="react200" />
+      <h1>Start React! :D</h1>
+      <ContextApi/>
     </div>
   );
 }
