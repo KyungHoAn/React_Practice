@@ -1,14 +1,30 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Route } from "react-router-dom";
-import reactRouter from "./R089_reactRouter";
-import reactRouter2 from "./R089_reactRouter2";
+
+// css
+import '../css/new.css';
+
+// header
+import HeaderAdmin from './Header/Header admin';
+
+// footer
+import Footer from './Footer/Footer';
+
+// login
+import LoginForm from './LoginForm';
+
+import reactThrottle from './R095_reactThrottle';
+import floatingPopulationList from './Floating_population/floatingPopulationList';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className="App">
-        <Route exact path="/" component={reactRouter} />
-        <Route exact path="/reactRouter2" component={reactRouter2} />
+        <HeaderAdmin/> 
+        <Route exact path='/' component={LoginForm} />
+        <Route exact path='/Throttle' component={reactThrottle} />
+        <Route path='/floatPopulationList' component={floatingPopulationList} />
+        <Footer/>
       </div>
     );
   }
