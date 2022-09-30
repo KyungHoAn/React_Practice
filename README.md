@@ -251,6 +251,9 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 - Route는 호출되는 url에 따라 이동할 component를 정의
 - Link는 <a>태그와 같이 페이지에 표시되는 링크를 클릭하면 url을 호출
 
+[react서버와 node 서버 프록시 연결]
+- 프록시 : 클라이언트가 다른 서버에 간접적으로 접속할 수 있도록 중계해주는 프로그램
+ex) 웹 브라우저(클라이언트)에 react 서버를 띄우고 react페이지에서 node api를 호출해 데이터 표시 가능, 이때 프록시를 설정하면node 서버 url을 localhost:5000/users가 아닌 /users로 간략하게 사용 가능 
 
 <hr/>
 
