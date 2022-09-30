@@ -13,8 +13,7 @@ import Footer from './Footer/Footer';
 // login
 import LoginForm from './LoginForm';
 
-import reactThrottle from './R095_reactThrottle';
-import floatingPopulationList from './Floating_population/floatingPopulationList';
+import reactProxy from './R109_reactProxy';
 
 class App extends Component {
   render () {
@@ -22,8 +21,7 @@ class App extends Component {
       <div className="App">
         <HeaderAdmin/> 
         <Route exact path='/' component={LoginForm} />
-        <Route exact path='/Throttle' component={reactThrottle} />
-        <Route path='/floatPopulationList' component={floatingPopulationList} />
+        <Route exact path='/reactProxy' component={reactProxy} />
         <Footer/>
       </div>
     );
