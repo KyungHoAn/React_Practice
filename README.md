@@ -256,23 +256,23 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
 ## React 문법
 - userRef 로 특정 DOM 선택
-o javascript를 사용할 때 특정 DOM을 선택해야 하는 상황에 getElementById, querySelector같은 DOM selector 함수를 사용해서 DOM을 선택
-o react에서는 ref를 사용
-o 함수형 컴포넌트에서 ref를 사용할 때에는 useRef라는 Hook함수를 사용, 클래스형 컴포넌트에서는 콜백 함수를 사용하거나 React.createRef라는 함수를 사용
-o ref 를 콘솔로 찍으면 current 프로퍼티 하나를 가진 객체가 나타난다.
+o javascript를 사용할 때 특정 DOM을 선택해야 하는 상황에 getElementById, querySelector같은 DOM selector 함수를 사용해서 DOM을 선택 <br/>
+o react에서는 ref를 사용<br/>
+o 함수형 컴포넌트에서 ref를 사용할 때에는 useRef라는 Hook함수를 사용, 클래스형 컴포넌트에서는 콜백 함수를 사용하거나 React.createRef라는 함수를 사용<br/>
+o ref 를 콘솔로 찍으면 current 프로퍼티 하나를 가진 객체가 나타난다.<br/>
 
 - window.pageYoffset
 o 스크롤시 스크롤값 구하는 구문
 
 - react-asynxc & Await
-o react에서 비동기 처리를 할때 Promise를 사용하지만 Promise의 단점을 보완하기 위해 ES7에서 async와 await라는 키워드 추가됨
-o Async함수
+o react에서 비동기 처리를 할때 Promise를 사용하지만 Promise의 단점을 보완하기 위해 ES7에서 async와 await라는 키워드 추가됨<br/>
+o Async함수<br/>
 ```
 async function {return "id"}
 const users = async() => {return "id"}
 ```
-o 비동기 함수를 만들기 위해서는 단순하게 함수 앞에 async를 붙여서 일반 함수를 async함수로 만들면 된다.
-o 함수 비동기 사용 예시
+o 비동기 함수를 만들기 위해서는 단순하게 함수 앞에 async를 붙여서 일반 함수를 async함수로 만들면 된다.<br/>
+o 함수 비동기 사용 예시<br/>
 ```
 async getMovices() {
   const movies = await axios.get("~~url~~");
@@ -288,11 +288,11 @@ getMovies = async () => {
 ```
 
 - Promis
-o Javascript(React)에서 Promise는 비동기 처리에 활용되는 객체
-o Promise는 주로 웹 서비스 구현 시 원활한 데이터 통신을 위해 활용된다.
-o 서버에 데이터를 요청했을 때, 데이터가 모두 받아오기 전에 웹에 출력하려고 할 때 발생하는 오류를 방지하기 위해 활용되며 예로는
-o Promise 객체는 A,B,C 로직이 있을 때 A로직이 모두 완료될 때까지 B,C 로직을 대기시키지 않고 실행시키는데 주로 활용된다.
-o Promise객체가 생성되고 종료될 때까지는 아래와 같은 상태를 같는다. 상태 => Process
+o Javascript(React)에서 Promise는 비동기 처리에 활용되는 객체<br/>
+o Promise는 주로 웹 서비스 구현 시 원활한 데이터 통신을 위해 활용된다.<br/>
+o 서버에 데이터를 요청했을 때, 데이터가 모두 받아오기 전에 웹에 출력하려고 할 때 발생하는 오류를 방지하기 위해 활용되며 예로는<br/>
+o Promise 객체는 A,B,C 로직이 있을 때 A로직이 모두 완료될 때까지 B,C 로직을 대기시키지 않고 실행시키는데 주로 활용된다.<br/>
+o Promise객체가 생성되고 종료될 때까지는 아래와 같은 상태를 같는다. 상태 => Process<br/>
 1. Pending(대기) : 비동기 로직 처리의 미완료 상태
 2. Fulfilled(이행) : 비동기 로직 처리가 완료된 상태, Promise 결과값 반환 상태
 3. Rejected(실패) : 비동기 로직 처리 실패 또는 오류 상태
