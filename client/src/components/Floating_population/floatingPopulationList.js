@@ -1,6 +1,62 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 class floatingPopulationList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            responseFPList: '',
+            append_FPList: '',
+        }
+    }
+
+    componentDidMount() {
+        this.callFloatPopulListApi()
+    }
+
+    callFloatPopulListApi = async () => {
+            axios.get('https://api.bigdatahub.co.kr/v1/datahub/datasets/search.json?pid=1002277&'+
+            'TDCAccessKey=f7c857088da5680d9cbbaf992adb71d391250f415151f4fcc7bd0801bb0d7fa4&$count=30', {
+            })
+            .then( response => {
+                try {
+                    this.setState({ responseFPList: response });
+                    this.setState({ append_FPList: this.FloatPopulListAppend() });
+                } catch (error) {
+                    alert(error)
+                }
+            })
+            .catch( error => {alert(error);return false;} );
+    }
+
+    FloatPopulListAppend = () => {
+        let result = []
+        var FPList = this.state.responseFPList.data
+        var jsonString = JSON.stringify(FPList)
+        jsonString = jsonString.replace(/\(1시간단위\)/g, '')
+        jsonString = jsonString.replace(/\(10세단위\)/g, '')
+        var json = JSON.parse(jsonString)
+
+        for(let i=0; i<json.entry.length; i++){
+            var data = json.entry[i]
+            var idx = i+1
+            result.push(
+                <tr class="hidden_type">
+                    <td>{idx}</td>
+                    <td>{data.일자}</td>
+                    <td>{data.시간}</td>
+                    <td>{data.연령대}</td>
+                    <td>{data.성별}</td>
+                    <td>{data.시}</td>
+                    <td>{data.군구}</td>
+                    <td>{data.유동인구수}</td>
+                </tr>
+            )
+        }
+        return result
+    }
+
     render () {
         return (
             <section class="sub_wrap" >
@@ -22,26 +78,7 @@ class floatingPopulationList extends Component {
                             </tr>
                         </table>	
                         <table class="table_ty2 fp_tlist">
-                            <tr class="hidden_type">
-                                <td>1</td>
-                                <td>20191101</td>
-                                <td>00</td>
-                                <td>40</td>
-                                <td>여성</td>
-                                <td>서울</td>
-                                <td>영등포구</td>
-                                <td>32670</td>
-                            </tr>
-                            <tr class="hidden_type">
-                                <td>1</td>
-                                <td>20191101</td>
-                                <td>00</td>
-                                <td>50</td>
-                                <td>남성</td>
-                                <td>서울</td>
-                                <td>구로구</td>
-                                <td>27888</td>
-                            </tr>
+                            {this.state.append_FPList}
                         </table>
                     </div>
                 </article>
