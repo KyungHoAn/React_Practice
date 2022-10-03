@@ -255,6 +255,32 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 - 프록시 : 클라이언트가 다른 서버에 간접적으로 접속할 수 있도록 중계해주는 프로그램
 ex) 웹 브라우저(클라이언트)에 react 서버를 띄우고 react페이지에서 node api를 호출해 데이터 표시 가능, 이때 프록시를 설정하면node 서버 url을 localhost:5000/users가 아닌 /users로 간략하게 사용 가능 
 
+[react 서버 api Get / Post]
+- react 에서 json데이터를 받아 사용하기 위해 node 서버에서 josn형태로 데이터를 response에 담아 보낸다
+~~~
+    componentDidMount = async () => {
+        const response = await fetch('/users');
+        const body = await response.json();
+        console.log("body.message : "+body.message)
+    }
+~~~
+- react에서 post 호출로 json데이터를 받아오기 위해 node 서버에서 post 호출을 받는 라우터 코드를 추가한다.
+~~~
+    componentDidMount() {
+        axios.post('/users',{            
+        })
+        .then(response => {
+            console.log("response data.message : "+response.data.message)
+        })
+    }
+~~~
+
+[nodemon]
+- nodemon : node 폴터의 소스가 수정될 때 자동으로 node서버 재시작
+
+
+
+
 <hr/>
 
 ## React 문법
