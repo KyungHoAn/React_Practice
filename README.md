@@ -278,6 +278,9 @@ ex) 웹 브라우저(클라이언트)에 react 서버를 띄우고 react페이�
 [nodemon]
 - nodemon : node 폴터의 소스가 수정될 때 자동으로 node서버 재시작
 
+[axios]
+- react 컴포넌트에서 post 방식으로 axios를 사용하여 node api를 호출, 호출된 데이터를 가공하여 html코드 생성 state변수에 할당
+
 
 
 
