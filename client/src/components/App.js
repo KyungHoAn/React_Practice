@@ -24,6 +24,7 @@ import floatingPopulationAreaChart from './Floating_population/floatingPopulatio
 import floatingPopulationBarChart from './Floating_population/floatingPopulationBarChart';
 import floatingPopulationComposedChart from './Floating_population/floatingPopulationComposedChart';
 import floatingPopulationScatterChart from './Floating_population/floatingPopulationScatterChart';
+import SoftwareList from './SoftwareToolsManage/SoftwareList';
 
 class App extends Component {
   render () {
@@ -31,6 +32,7 @@ class App extends Component {
       <div className="App">
         <HeaderAdmin/> 
         <Route exact path='/' component={LoginForm} />
+        <Route path='/SoftwareList' component={SoftwareList}/>
         <Route exact path='/Throttle' component={reactThrottle} />
         <Route exact path='/reactProxy' component={reactProxy} />
         <Route exact path='/ApiGetJson' component={ApiGetJson}/>
