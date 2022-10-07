@@ -151,6 +151,52 @@ R020_PropsObjVal.propTypes = {
 [hook사용]
 - useState() 함수 : state 변숫값을 선언 및 할당, 이때 두 가지 인자가 선언된 배열이 반환 된다. 첫 번재 인자 contents는 state 변수명, 두 번째 인자 setContents는 state 변수값을 변경
 - useEffect() 함수는 생명주기 함수 componentDidMout()와 같이 return 되는 html 코드들이 화면에 그려진 이후에 실행
+  - React component가 렌더링 될 때마다 특정 작업을 실행할 수 있도록하는 리액트 Hook 이다.
+  - 컴포넌트가 렌더링 될 때 특정 작업을 실행할 수 있도록 하는 Hook이다.
+  - 페이지가 처음 렌더링 되고 난 후 useEffect 는 무조건 한번 실행된다.
+  - useEffect에 배열로 지정한 useState의 값이 변경되면 실행된다.
+  즉. useEffect는 렌더링, 혹은 변수의 값 혹은 오브젝트가 달라지게 되면, 그것을 인지하고 업데이트를 해주는 함수
+  - useEffect는 콜백 함수를 부르게 되며 렌더링 혹은 값, 오브젝트의 변경에 따라 어떠한 함수 혹은 여러 개의 함수들을 동작시킬 수 있다.
+```
+useEffect(function, deps)
+```
+- function : 실행하고자 하는 함수
+- deps : 배열 형태 function실행시킬 조건, deps에 특정값을 넣게 되면 컴포넌트가 mount 될 때, 지정한 값이 업데이트될 때 useEffect를 실행
+- useEffect 함수 불러오기
+```
+import React, {useEffect} from 'react';
+```
+1. component 가 Mount되었을 때 (나타날 때)
+```
+useEffect(() => {
+  console.log("렌더린 될때마다 실행");
+});
+```
+2. component가 update될 때 (특정 props, state가 바뀔 때)
+- 특정값이 업데이트 될 때 실행하고 싶을 때는 deps위치의 배열 안에 검사하고 싶은 값을 넣어준다.
+- 업데이트 될 때만 실행하는 것이 아니라 마운트 될 때도 실행된다.
+```
+const mounted = useRef(false);
+
+useEffect(() => {
+  if(!mounted.current) {
+    mounted.current = true;
+  } else {
+    //ajax
+  }
+},[바뀌는 값]);
+```
+- 컴포넌트가 마운트 될때는 if문에서 아무것도 실행x mounted 값만 바꿔주고, else 에서 배열 안에 있는 값이 바뀌면,
+ ajax 서버 통신이라던지 원하는 코드를 실행할 수 있다.
+ 
+ 3. Component가 unmount될 때(사라질 때) & update 되기 직전에
+ - cleanup 함수 반환 (return 뒤에 나오는 함수이며 useEffect에 대한 뒷정리 함수라고 하낟.
+ - 언마운트 될 때만 cleanup 함수를 실행하고 싶을 때
+ : 두 번째 파라미터로 빈 배열을 넣는다.
+ 
+ - 특정값이 업데이트 되기 직전에 cleanup 함수를 실행하고 싶을 때
+ : deps 배열 안에 검사하고 싶은 값을 넣어준다.
+ 
 
 [Fragment 사용]
 - 컴포넌트 단위로 element 를 return 할때마다 ,<html> 태크로 전체를 감싸지 않으면 에러 발생
