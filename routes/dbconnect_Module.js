@@ -45,4 +45,24 @@ router.post("/", (req, res) => {
   });
 });
 
+// Connection Pool setting
+const pool = mysql.createPool({
+  connectionLimit: 66,
+  waitForConnections: true,
+  host: "react200.#########.ap-northeast-2.rds.amazonaws.com",
+  port: "3306",
+  database: 'react',
+  user: 'admin',
+  password: 'react200RDS',
+})
+
+pool.getConnection(function(err, connection){
+  connection.query(query, function(error, result){
+    var json = JSON.parse(string);
+    res.send({json})
+    connection.release();
+    console.log("====Node Mybatis Query log end=====n");
+  })
+})
+
 module.exports = router;
