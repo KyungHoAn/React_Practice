@@ -46,3 +46,32 @@ jsx 사용x : React.createElement('div', null, `Hello, ${name}`);
 - class component는 React.component를 상속받는다.
 - compoennt이름은 항상 대문자로 시작해야 한다.
 - compoennt 렌더링
+
+### State 상태
+
+- 리액트 Component의 상태
+- 리액트 compennt의 변경가능한 상태
+- state는 개발자가 정한다.
+- 렌더링이나 데이터 흐름에 사용되는 값만state에 포함시켜야한다.
+- 모든 class컴포넌트에는 constructor 생성자 함수가 존재하며
+  클래스가 생성될때 실행된다.
+- 클래스 컴포넌트의 경우 state를 생성자 컴포넌트에서 정의한다.
+- 함수 컴포넌트는 state를 useState라는 hook을 사용하여 정의한다.
+- state는 직접 수정할 수 없다. 꼭 setState를 사용해야한다.
+
+```
+// state를 직접 수정(잘못된 사용법)
+this.state = {
+    name: 'Inje'
+};
+// setState 함수를 통한 수정 (정상적인 사용법)
+this.setState({
+    name: 'Inje'
+});
+```
+
+- LifeSycle 생명주기: 컴포넌트가 생성 및 소멸되는 주기
+
+  - Component가 계속 존재하는 것이 아니라, 시간의 흐름에 따라 생성되고 업데이트 되다가 사라진다.
+
+- map함수를 사용할때에는 key가 반드시 들어가야한다. 오류메시지 뜸
