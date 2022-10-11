@@ -203,3 +203,23 @@ function MyButton(props){
   );
 }
 ```
+
+- condition : 조건부 렌더링
+  - 어떠한 조건에 따라서 렌더링이 달라지는 것
+
+- && 현산자
+ex) length가 0 보다 크면 h2가 실행되고 작으면 아무것도 실행되지 않는다.
+```
+...
+return(
+  <div>
+    <h1>안녕하세요</h1>
+    {unreadMessage.length > 0 &&
+      <h2>
+        현재 {unreadMessage.length} 갱의 읽지 않은 메시지가 있습니다.
+      </h2>
+    }
+  </div>
+)
+```
+
