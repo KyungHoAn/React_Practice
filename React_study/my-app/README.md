@@ -158,3 +158,48 @@ const refContainer = useRef(초긱값);
   - 컴포넌트가 렌더링될 때마다 매번 같은 순서로 호출되어야 한다.
   - 리액트 함수 컴포넌트에서만 Hook을 호출해야 한다.
 eslint-plugin-react-hooks
+
+- Custom Hook 만들기
+  - 이름이 use로 시작하고 내부에서 다른 Hook을 호출하는 하나의 자바스크립트 함수
+  
+- Event Handler = Evnet Lisener
+  - 특정 사건을 의미
+  - ex) 버튼 클릭
+  - 함수 컴포넌트에서의 eventhandler
+```
+function Toggle(props){
+  const [isToggleOn, setIsToggleOn] = useState(true);
+
+  //방법1 함수안에 함수로 정의
+  function handleClick() {
+    setIsToggleOn((isToggleOn) => !isToggleOn);
+  }
+
+  //방법2: arrow function 상용하여 정의
+  const handleClick = () => {
+    setIsToggleOn((isToggleOn) => !isToggleOn);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      {isToggleOn ? "켜짐" : "꺼짐"}
+    </button>
+  );
+}
+```
+
+- Aurgument : 주장, 함수의 전달할 데이터 <=> parameter : 매개변수
+- 함수컴포넌트에서 매개변수를 전달할 때
+```
+function MyButton(props){
+  const handleDelete = (id, event) => {
+    console.log(id, event.target);
+  };
+
+  return(
+    <button onClick={(event) => handleDelete(1, event)}>
+      삭제하기
+    </button>
+  );
+}
+```
