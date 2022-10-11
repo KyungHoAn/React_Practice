@@ -75,3 +75,86 @@ this.setState({
   - Component가 계속 존재하는 것이 아니라, 시간의 흐름에 따라 생성되고 업데이트 되다가 사라진다.
 
 - map함수를 사용할때에는 key가 반드시 들어가야한다. 오류메시지 뜸
+
+### React Hook
+- 함수 component
+  - state 사용 불가
+  - Lifecycle에 따른 구현 불가
+  - Hook
+
+- class component
+  - 생성자에서 stat를 정의
+  - setState() 함수를 통해 state업데이트
+  - Lifecycle methods 제공
+
+- useState Hook
+  - state를 사용하기 위한 hook
+```
+import React, {useState} from 'react';
+...
+
+//사용법
+const [변수명, set함수명] = useState(초기값);
+// 변수 각각에 대하여 setState함수가 존재한다.
+```
+
+- useEffect
+  - side effect( 리액트에서 의미하는 것은 효과, 영향)
+  - useEffect(이펙트 함수, 의존성 배열);
+  - componentWillUnmount와 같은 역할을 한다.(component가 unmount될 때 호출된다.)
+```
+useEffect(() => {
+  // 컴포넌트가 마운트 된 이후
+  // 의존성 배열에 있는 변수들 중 하나라도 값이 변경되었을 때 실행됨
+  // 의존성 배열에 빈 배열([])을 넣으면 마운트와 언마운트시에 단 한 번씩만 실행됨
+  // 의존성 배열 생략 시 컴포넌트 업데이트 시마다 실행됨
+  ...
+  
+  return () => {
+    // 컴포넌트가 마운트 해제되기 전에 실행됨
+    ...
+  }
+},[의존성 변수1, 의존성 변수2, ...]);
+```
+
+- useMemo
+  - Memoized value를 리턴하는 Hook
+  - Memoization : 최적화를 위해 사용하는 것
+  - useMemo() 사용법
+```
+const memoizedValue = userMemo(
+  () => {
+    //연산량이 높은 작업을 수행하여 결과를 반환
+    return computeExpensiveValue(의존성 변수, 의존성 변수2);
+  },
+  [의존성 변수1, 의존성 변수2]
+);
+```
+
+- useCallBack()
+  - useMemo() Hook과 유사하지만 값이 아닌 함수를 반환한다.
+  - 컴포넌트가 렌더링될때마다 함수를 새로 정의하는 것이 아니라 의존성 배열의 값이 바뀐 경우에만 함수를 새로 정의해서 리턴해준다.
+
+```
+const memoizedCallback = useCallback(
+  ()=> {
+    doSomething(의존성 변수1, 의존성 변수2);
+  },
+  [의존성 변수1, 의존성 변수2]
+); 
+```
+
+- useRef() Hook
+  - Reference를 사용하기 위한 Hook
+  - 리액트에서 reference란 특정 컴포넌트에 접근할 수 있는 객체
+  - reference에는 current라는 속성이 있음 -> 현재 참조하고 있는 element를 의미한다.
+  - 사용법
+```
+const refContainer = useRef(초긱값);
+```
+
+- Hook 규칙
+  - 무조건 최상위 레벨에서만 호출해야함
+  - 컴포넌트가 렌더링될 때마다 매번 같은 순서로 호출되어야 한다.
+  - 리액트 함수 컴포넌트에서만 Hook을 호출해야 한다.
+eslint-plugin-react-hooks
