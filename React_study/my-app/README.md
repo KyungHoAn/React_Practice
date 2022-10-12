@@ -223,3 +223,59 @@ return(
 )
 ```
 
+- list & key
+```
+// list
+const numbers = [1,2,3,4,5];
+```
+
+- map() 함수
+```
+const doubled = numbers.map((number) => number*2)
+```
+- map 함수를 사용하여 리액트에서 렌더링
+```
+const numbers = [1,2,3,4,5];
+const listItems = numbers.map((number) => 
+  <li>{number}<li>
+);
+
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+```
+
+- 숫자 목록을 나타내는 numberlist component -> key가 없다는 error 메시지 뜬다.
+```
+function NumberList(props) {
+  const { numbers } = props;
+
+  const listItmes = numbers.map((number) =>
+    <li>{number}</li>
+  );
+
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1,2,3,4,5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+- key로 값을 사용하는 경우
+```
+const numbers = [1,2,3,4,5];
+const listItmes = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+=> key값은 고유해야하는데 중복되면 경고메시지 출력
+- _map()함수 안에 있는 Elements는 꼭 key가 필요하다!_
+
