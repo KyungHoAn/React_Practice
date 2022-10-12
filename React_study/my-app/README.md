@@ -279,3 +279,110 @@ const listItmes = numbers.map((number) =>
 => key값은 고유해야하는데 중복되면 경고메시지 출력
 - _map()함수 안에 있는 Elements는 꼭 key가 필요하다!_
 
+*** Form
+- Controlled Component
+  - 모든 데이터를 state에서 관리
+```
+function NameForm(props) {
+  const [value, setValue] = useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value); //event.target -> 현재 발생한 이벤트의 타겟
+  }
+
+  const handleSubmit = (event) => {
+    alert('입력한 이름: '+ value);
+    event.perventDefault();
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        이름:
+        <input type="text" value={value} onChange={handleChange}/>
+      </label>
+      <button type="submit">제출</button>
+    </form>
+  )
+}
+```
+- 모든 입렧값을 대문자로 변경
+```
+const handleChange = (event) => {
+  setValue(event.target.value.toUpperCase());
+}
+```
+
+- select
+```
+function FruitSelect(props) {
+  const [value, setValue] = useState('grape');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+    alert('선택한 과일: ' +value);
+    event.preventDefault();
+  }
+
+  return(
+    <form onSubmit={handleSubmit}>
+      <label>
+        과일 선택:
+        <select value= {value} onChange={handleChange}>
+          <option value="apple">사과</option>
+          <option value="banana">바나나</option>
+          <option value="grape">포도</option>
+          <option value="watermelon">수박</option>
+        </select>
+      </label>
+      <button type="submit">제출</button>
+    </form>
+  )
+}
+```
+
+- file input tag -> 디바이스 저장 장치로부터 하나 또는 여러 개의 파일을 선택할 수 있는 해줌
+:: Uncontrolled Component
+```
+<input type="file">
+```
+```
+function reservation(props) {
+  const [haveBreakfast, setHaveBreakFast] = useState(ture);
+  const [numberOfGuest, setNumberOfGuest] = useState(2);
+
+  const handleSubmit = (event) => {
+    alert(`아침식사 여부: ${haveBreakfast}, 방문객 수: ${numberOfGuest}`);
+    event.preventDefault();
+  }
+
+  return(
+    <form onSubmit={handleSubmit}>
+      <label>
+        아침식사 여부:
+        <input
+          type="checkbox"
+          checked ={habeBreakfast}
+          onChange = {(event) => {
+            setHaveBreakfast(event.target.checked);
+          }}/>
+      </label>
+      <br/>
+      <label>
+        방문객 수:
+        <input
+          type="number"
+          value={numberOfGuest}
+          onChange={(event) => {
+            setNumberIfGuest(event.target.value);
+          }}/>
+      <label>
+      <button type="submit">제출</button>
+    </form>
+  )
+}
+```
+
