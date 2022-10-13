@@ -1,4 +1,4 @@
-import { useState, UseCallBack } from "react";
+import { useState, useCallBack } from "react";
 import ThemeContext from "./ThemeContext";
 import MainContent from "./Maincontent";
 import { useCallback } from "react";
