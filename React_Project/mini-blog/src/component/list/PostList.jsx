@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PostListItem from "./PostListItem";
 
-const wrapper = styled.div`
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -18,7 +18,7 @@ function PostList(props){
     const {posts, onClickItem} = props;
 
     return (
-        <wrapper>
+        <Wrapper>
             {posts.map((post, index) => {
                 return (
                     <PostListItem
@@ -30,7 +30,7 @@ function PostList(props){
                         />
                 );
             })}
-        </wrapper>
+        </Wrapper>
     );
 }
 
