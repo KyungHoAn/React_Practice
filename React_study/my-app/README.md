@@ -497,11 +497,15 @@ function ThemedButton(props) {
   );
 }
 ```
+
 - React.createContext : 컨텍스트 생성
+
 ```
 const Mycontext = React.createContext(기본값);
 ```
+
 - 하위 컴포넌트가 컨텍스트를 받기 위해서는 Context.Provider설정
+
 ```
 // Provider 사용
 <MyContext.Provider value={/* some value */}>
