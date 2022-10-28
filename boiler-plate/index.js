@@ -6,7 +6,7 @@ const port = 5000
 
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://KyungHoAn:akh1216@pjt01.yiceuzg.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect('',{
     useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected..'))
 .catch(err => console.log(err))
