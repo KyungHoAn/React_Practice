@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    "mongodb+srv://kyungHoAn:akh1216@pjt01.yiceuzg.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://:@pjt01.yiceuzg.mongodb.net/?retryWrites=true&w=majority"
   )
   .then(() => console.log("MongoDB Connected.."))
   .catch((err) => console.log(err));
