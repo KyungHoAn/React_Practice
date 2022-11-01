@@ -7,6 +7,8 @@ const port = 5000;
 const bodyParser = require("body-parser"); //server에서 분석해서 가져올 수 있게 해준다.
 const { User } = require("./models/User");
 
+const config = require("./config/key");
+
 // application /x-www-fromurlencoded ->  분석해서 가져올 수 있게 해준다.
 app.use(bodyParser.urlencoded({ extended: true }));
 // application / json 를 분석해서 가져올수 잇게 해준다.
@@ -14,9 +16,7 @@ app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(
-    "mongodb+srv://KyungHoAn:akh1216@pjt01.yiceuzg.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(config.mongoURI)
   .then(() => console.log("MongoDB Connected.."))
   .catch((err) => console.log(err));
 
