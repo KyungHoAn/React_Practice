@@ -29,8 +29,8 @@ const userSchema = mongoose.Schema({
   token: {
     type: String,
   },
+  //토큰 유효기간
   tokenExp: {
-    //토큰 유효기간
     type: Number,
   },
 });
