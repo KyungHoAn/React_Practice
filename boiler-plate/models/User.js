@@ -50,6 +50,8 @@ userSchema.pre("save", function (next) {
         next();
       });
     });
+  } else {
+    next();
   }
 
   // bcrypt.genSalt(saltRounds, function (err, salt) {
@@ -59,6 +61,12 @@ userSchema.pre("save", function (next) {
   // });
   // next()
 });
+userSchema.methods.comparePassword = function (plainPassword, cb) {
+  //plainPassword 1234567   암호화된 비밀번호
+  bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+    if (err) return cb(err), cb(null, isMatch);
+  });
+};
 
 const User = mongoose.model("User", userSchema);
 
