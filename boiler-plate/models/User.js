@@ -54,13 +54,6 @@ userSchema.pre("save", function (next) {
   } else {
     next();
   }
-
-  // bcrypt.genSalt(saltRounds, function (err, salt) {
-  //   bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
-  //     // Stroe hash in your password DB.
-  //   });
-  // });
-  // next()
 });
 userSchema.methods.comparePassword = function (plainPassword, cb) {
   //plainPassword 1234567   암호화된 비밀번호
