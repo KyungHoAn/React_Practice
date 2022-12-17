@@ -1,7 +1,4 @@
 # React_study
-
-<hr/>
-
 ### JSX
 
 - 자바스크립트의 문법을 확장 - javascript + XML / HTML
